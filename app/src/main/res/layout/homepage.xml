@@ -11,12 +11,13 @@
         android:layout_width="378dp"
         android:layout_height="81dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-black"
         android:text="Summary"
         android:textColor="#FFFFFF"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
