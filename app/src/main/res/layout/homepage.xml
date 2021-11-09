@@ -3,17 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="72dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="172dp"
-        android:text="Homepage"
+        android:id="@+id/welcomeText"
+        android:layout_width="378dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Summary"
+        android:textColor="#FFFFFF"
+        android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,5 +29,140 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
+
+    <TextView
+        android:id="@+id/favText"
+        android:layout_width="195dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Health Metrics"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+    <TextView
+        android:id="@+id/stepText"
+        android:layout_width="354dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:text="        Steps"
+        android:textColor="#FD693A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favText" />
+
+    <TextView
+        android:id="@+id/stepCount"
+        android:layout_width="152dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="1500"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stepText"
+        app:layout_constraintStart_toStartOf="@+id/stepText" />
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="96dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="136dp"
+        android:fontFamily="sans-serif-black"
+        android:text="steps"
+        android:textColor="#9E9494"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/stepText"
+        app:layout_constraintTop_toTopOf="@+id/stepText" />
+
+    <TextView
+        android:id="@+id/kmText"
+        android:layout_width="354dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:text="        Distance"
+        android:textColor="#FD693A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stepText" />
+
+    <TextView
+        android:id="@+id/disText"
+        android:layout_width="154dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="2.1"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/kmText"
+        app:layout_constraintStart_toStartOf="@+id/kmText" />
+
+    <TextView
+        android:id="@+id/km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="240dp"
+        android:fontFamily="sans-serif-black"
+        android:text="km"
+        android:textColor="#9E9494"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/kmText"
+        app:layout_constraintTop_toTopOf="@+id/kmText" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="354dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:text="        Calories"
+        android:textColor="#FD693A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kmText" />
+
+    <TextView
+        android:id="@+id/calNum"
+        android:layout_width="152dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="257"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calories"
+        app:layout_constraintStart_toStartOf="@+id/calories" />
+
+    <TextView
+        android:id="@+id/calText"
+        android:layout_width="96dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="160dp"
+        android:fontFamily="sans-serif-black"
+        android:text="cals"
+        android:textColor="#9E9494"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/calories"
+        app:layout_constraintTop_toTopOf="@+id/calories" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
