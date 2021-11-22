@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAppDevelopmentFinalProject">
         <activity
+            android:name=".EditPersonalInfo"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
             android:name=".LoginPage"
             android:exported="true">
             <intent-filter>
@@ -18,11 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".Maps"></activity>
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".HomePage" />
+        <activity android:name=".Maps" />
+        <activity android:name=".Profile" />
+        <activity android:name=".Settings" />
     </application>
 
 </manifest>
