@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Mobile App Development Final Project</string>
+    <string name="profile">profile</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="weight">Weight</string>
+    <string name="total_distance_travelled">Total Distance Travelled</string>
+    <string name="todo">TODO</string>
 </resources>
