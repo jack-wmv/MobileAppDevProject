@@ -1,4 +1,4 @@
-package com.example.mobileappdevelopmentfinalproject;
+package com.example.mobileappdevelopmentfinalproject.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ChangePassword extends AppCompatActivity {

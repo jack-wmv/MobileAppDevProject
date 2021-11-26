@@ -1,4 +1,4 @@
-package com.example.mobileappdevelopmentfinalproject;
+package com.example.mobileappdevelopmentfinalproject.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class EditPersonalInfo extends AppCompatActivity {
