@@ -1,8 +1,14 @@
 package com.example.mobileappdevelopmentfinalproject.Activities;
 
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,16 +16,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends AppCompatActivity implements SensorEventListener {
+    private TextView textViewStepCounter;
+    private SensorManager sensorManager;
+    private Sensor mStepCounter;
+    int stepCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
-
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        textViewStepCounter = findViewById(R.id.stepCount);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         navigation.setSelectedItemId(R.id.homeItem);
+        boolean isCounterSensorPresent;
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) !=null)
+        {
+            mStepCounter = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+            isCounterSensorPresent = true;
+
+        } else {
+            textViewStepCounter.setText("Counter Sensor is not present");
+            isCounterSensorPresent = false;
+        }
+
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -46,4 +69,31 @@ public class HomePage extends AppCompatActivity {
 
 
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null)
+            sensorManager.unregisterListener(this,mStepCounter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null)
+            sensorManager.registerListener(this,mStepCounter,SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if(sensorEvent.sensor == mStepCounter){
+            stepCount = (int) sensorEvent.values[0];
+            textViewStepCounter.setText(String.valueOf(stepCount));
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
+    }
+
 }
