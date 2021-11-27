@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobileappdevelopmentfinalproject">
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer"
+        android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,13 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAppDevelopmentFinalProject">
         <activity
-            android:name=".EditPersonalInfo"
+            android:name=".Activities.Registration"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.EditPersonalInfo"
             android:exported="false" />
         <activity
-            android:name=".ChangePassword"
+            android:name=".Activities.ChangePassword"
             android:exported="false" />
         <activity
-            android:name=".LoginPage"
+            android:name=".Activities.LoginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +34,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomePage" />
-        <activity android:name=".Maps" />
-        <activity android:name=".Profile" />
-        <activity android:name=".Settings" />
+        <activity android:name=".Activities.HomePage" />
+        <activity android:name=".Activities.Maps" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC8cIGb5sr2SZm52iNIAlPMuUYZg_N3-5A" />
+        <activity android:name=".Activities.Profile" />
+        <activity android:name=".Activities.Settings" />
     </application>
 
 </manifest>
