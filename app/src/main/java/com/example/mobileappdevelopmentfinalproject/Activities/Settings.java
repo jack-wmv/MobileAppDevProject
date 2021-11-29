@@ -8,7 +8,14 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
+import com.example.mobileappdevelopmentfinalproject.Dao.FitnessDao;
+import com.example.mobileappdevelopmentfinalproject.Dao.LoginDao;
+import com.example.mobileappdevelopmentfinalproject.Dao.UserDao;
+import com.example.mobileappdevelopmentfinalproject.Database.FitnessDatabase;
 import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +25,40 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
+
+        FitnessDatabase db = new FitnessDatabase() {
+            @Override
+            public LoginDao loginDao() {
+                return null;
+            }
+
+            @Override
+            public UserDao userDao() {
+                return null;
+            }
+
+            @Override
+            public FitnessDao fitnessDao() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            protected InvalidationTracker createInvalidationTracker() {
+                return null;
+            }
+
+            @Override
+            public void clearAllTables() {
+
+            }
+        };
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
@@ -62,6 +103,5 @@ public class Settings extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 }

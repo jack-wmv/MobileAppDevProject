@@ -5,14 +5,20 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import com.example.mobileappdevelopmentfinalproject.Dao.LoginDao;
+import com.example.mobileappdevelopmentfinalproject.Database.FitnessDatabase;
 import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ChangePassword extends AppCompatActivity {
+
+    EditText oldPass,newPass,checkPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +30,11 @@ public class ChangePassword extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.settingsItem);
         Button submit = findViewById(R.id.btnSubmit);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChangePassword.this, LoginPage.class);
-                startActivity(intent);
-            }
-        });
+        oldPass = findViewById(R.id.editTextTextPassword);
+        newPass = findViewById(R.id.editTextNewPass);
+        checkPass = findViewById(R.id.editTextNewPasswordAgain);
+
+        submit.setOnClickListener(View -> onSubmitPassword());
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,6 +60,17 @@ public class ChangePassword extends AppCompatActivity {
         });
 
     }
+
+    /**
+    public void onSubmitPassword() {
+        FitnessDatabase database = Room.databaseBuilder(this, FitnessDatabase.class, "fitness_db")
+                .allowMainThreadQueries()
+                .build();
+        LoginDao loginDaoObject = database.loginDao();
+        //LoginDao login = loginDaoObject.getCredentials();
+
+    }
+     **/
 }
 
 
