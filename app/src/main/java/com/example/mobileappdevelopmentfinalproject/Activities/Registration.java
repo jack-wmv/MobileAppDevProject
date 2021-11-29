@@ -19,12 +19,13 @@ import com.example.mobileappdevelopmentfinalproject.entities.User;
 
 public class Registration extends AppCompatActivity {
 
-    private TextView Username;
-    private TextView Password;
-    private TextView FirstName;
-    private TextView LastName;
-    private TextView Address;
-    private TextView DateofBirth;
+    private TextView usernameView;
+    private TextView passwordView;
+    private TextView firstnameView;
+    private TextView lastnameView;
+    private TextView ageView;
+    private TextView heightView;
+    private TextView weightView;
     final User user = new User();
     final Login login = new Login();
 
@@ -33,52 +34,45 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        Username = (TextView) findViewById(R.id.UserName_reg);
-        Password = (TextView) findViewById(R.id.Password_reg);
-        FirstName = (TextView) findViewById(R.id.firstname_reg);
-        LastName = (TextView) findViewById(R.id.lastname_reg);
-        Address = (TextView) findViewById(R.id.Address_reg);
-        DateofBirth = (TextView) findViewById(R.id.dateofbirth_reg);
+        usernameView = (TextView) findViewById(R.id.UserName_reg);
+        passwordView = (TextView) findViewById(R.id.Password_reg);
+        firstnameView = (TextView) findViewById(R.id.firstname_reg);
+        lastnameView = (TextView) findViewById(R.id.lastname_reg);
+        ageView = (TextView) findViewById(R.id.age_reg);
+        heightView = (TextView) findViewById(R.id.height_reg);
+        weightView = (TextView) findViewById(R.id.weight_reg);
 
         Button btn = findViewById(R.id.register_btn);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String UserText = Username.getText().toString();
-                String PassText = Password.getText().toString();
-                String FirstText = FirstName.getText().toString();
-                String LastText = LastName.getText().toString();
-                String AddressText = Address.getText().toString();
-                String BirthText = DateofBirth.getText().toString();
+                String userText = usernameView.getText().toString();
+                String passText = passwordView.getText().toString();
+                String firstText = firstnameView.getText().toString();
+                String lastText = lastnameView.getText().toString();
+                String ageText = ageView.getText().toString();
+                String heightText = heightView.getText().toString();
+                String weightText = weightView.getText().toString();
 
-
-                if (UserText.isEmpty() || PassText.isEmpty() || FirstText.isEmpty() || LastText.isEmpty() || AddressText.isEmpty() || BirthText.isEmpty()) {
+                if (userText.isEmpty() || passText.isEmpty() || firstText.isEmpty() || lastText.isEmpty() || ageText.isEmpty() || heightText.isEmpty()|| weightText.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please Enter Your Credentials", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(Registration.this, LoginPage.class);
-                    user.setUsername(UserText);
-                    user.setFirstName(FirstText);
-                    user.setLastName(LastText);
-                    user.setAddress(AddressText);
-                    user.setDateOfBirth(BirthText);
+                    user.setUsername(userText);
+                    user.setFirstName(firstText);
+                    user.setLastName(lastText);
+                    user.setAge(ageText);
+                    user.setHeight(heightText);
+                    user.setWeight(weightText);
                     SaveUserInfo();
-                    login.setUsername(UserText);
-                    login.setPassword(PassText);
-                    SaveLoginInfo();
 
+                    login.setUsername(userText);
+                    login.setPassword(passText);
+                    SaveLoginInfo();
                 }
             }
         });
-
-
-
-
-
-
-
-
-
     }
 
 

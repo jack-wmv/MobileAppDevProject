@@ -26,7 +26,7 @@ public class LoginPage extends AppCompatActivity {
     private List<Login> loginList;
     LoginDao db;
     FitnessDatabase database;
-
+    static String UserText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +44,12 @@ public class LoginPage extends AppCompatActivity {
         db = database.loginDao();
 
         Button login = findViewById(R.id.loginButton);
-        TextView Register = findViewById(R.id.register);
+        TextView Register = findViewById(R.id.Register);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String UserText = username.getText().toString();
+                UserText = username.getText().toString();
                 String PassText = password.getText().toString();
 
                 Login data = db.getCredentials(UserText,PassText);

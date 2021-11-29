@@ -22,8 +22,9 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
     private TextView textViewStepCounter, kM, cal;
     private SensorManager sensorManager;
     private Sensor mStepCounter;
-    int stepCount = 0;
-    double kiloMeter = 0, calories = 0;
+    static int stepCount = 0;
+    static double kiloMeter = 0;
+    double calories = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +86,7 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
     protected void onResume() {
         super.onResume();
         if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null)
-            sensorManager.registerListener(this,mStepCounter,SensorManager.SENSOR_DELAY_NORMAL);
+            sensorManager.registerListener(this,mStepCounter, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -97,8 +98,6 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
             kM.setText(String.format("%.2f", kiloMeter));
             calories = stepCount * 0.03;
             cal.setText(String.format("%.2f", calories));
-
-
         }
     }
 

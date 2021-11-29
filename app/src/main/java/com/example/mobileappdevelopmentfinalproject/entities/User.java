@@ -16,17 +16,46 @@ public class User implements Serializable {
     @ColumnInfo(name = "Username")
     private String username;
 
-    @ColumnInfo(name = "Address")
-    private String address;
-
     @ColumnInfo(name = "FirstName")
     private String firstName;
 
     @ColumnInfo(name = "LastName")
     private String lastName;
 
-    @ColumnInfo(name = "DateofBirth")
-    private String dateOfBirth;
+    @ColumnInfo(name = "Age")
+    private String age;
+
+    @ColumnInfo(name = "Height")
+    private String height;
+
+    @ColumnInfo(name = "Weight")
+    private String weight;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+
 
 
     public int getUser_id() { return user_id; }
@@ -43,13 +72,6 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -67,13 +89,6 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 
 
 

@@ -8,6 +8,16 @@
     android:background="@color/black">
 
 
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="139dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
     <TextView
         android:id="@+id/homePage"
         android:layout_width="154dp"

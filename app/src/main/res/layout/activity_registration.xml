@@ -7,9 +7,18 @@
     tools:context=".Activities.Registration"
     android:background="@color/black">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:fontFamily="sans-serif-black"
@@ -24,32 +33,17 @@
         android:id="@+id/UserName_reg"
         android:layout_width="354dp"
         android:layout_height="69dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
         android:background="@drawable/layout_bg"
         android:ems="10"
         android:fontFamily="sans-serif-black"
-        android:hint="    UserName"
+        android:hint="    Username"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/dateofbirth_reg"
-        android:layout_width="354dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/layout_bg"
-        android:ems="10"
-        android:fontFamily="sans-serif-black"
-        android:hint="    Date of Birth"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Address_reg" />
 
     <EditText
         android:id="@+id/Password_reg"
@@ -58,6 +52,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/layout_bg"
         android:ems="10"
+        android:layout_gravity="center"
         android:fontFamily="sans-serif-black"
         android:hint="    Password"
         android:inputType="textPersonName"
@@ -74,8 +69,9 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/layout_bg"
         android:ems="10"
+        android:layout_gravity="center"
         android:fontFamily="sans-serif-black"
-        android:hint="    Firstname"
+        android:hint="    First Name"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,10 +84,11 @@
         android:layout_width="354dp"
         android:layout_height="69dp"
         android:layout_marginTop="16dp"
+        android:layout_gravity="center"
         android:background="@drawable/layout_bg"
         android:ems="10"
         android:fontFamily="sans-serif-black"
-        android:hint="    Lastname"
+        android:hint="    Last Name"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,20 +97,55 @@
         app:layout_constraintTop_toBottomOf="@+id/firstname_reg" />
 
     <EditText
-        android:id="@+id/Address_reg"
+        android:id="@+id/age_reg"
         android:layout_width="354dp"
         android:layout_height="69dp"
         android:layout_marginTop="16dp"
+        android:layout_gravity="center"
         android:background="@drawable/layout_bg"
         android:ems="10"
         android:fontFamily="sans-serif-black"
-        android:hint="    Address"
+        android:hint="    Age"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastname_reg" />
+
+            <EditText
+                android:id="@+id/height_reg"
+                android:layout_width="354dp"
+                android:layout_height="69dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/layout_bg"
+                android:ems="10"
+                android:fontFamily="sans-serif-black"
+                android:hint="    Height"
+                android:inputType="textPersonName"
+                android:textColorHint="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/age_reg" />
+
+            <EditText
+                android:id="@+id/weight_reg"
+                android:layout_width="354dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/layout_bg"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:hint="    Weight"
+                android:inputType="textPersonName"
+                android:textColorHint="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/height_reg" />
 
     <Button
         android:id="@+id/register_btn"
@@ -123,18 +155,10 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:text="Register"
+        android:layout_marginBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateofbirth_reg" />
+        app:layout_constraintTop_toBottomOf="@+id/weight_reg" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
