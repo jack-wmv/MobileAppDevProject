@@ -16,11 +16,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobileappdevelopmentfinalproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.DecimalFormat;
+
 public class HomePage extends AppCompatActivity implements SensorEventListener {
-    private TextView textViewStepCounter;
+    private TextView textViewStepCounter, kM, cal;
     private SensorManager sensorManager;
     private Sensor mStepCounter;
     int stepCount = 0;
+    double kiloMeter = 0, calories = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
         setContentView(R.layout.homepage);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         textViewStepCounter = findViewById(R.id.stepCount);
+        kM = findViewById(R.id.disText);
+        cal = findViewById(R.id.calNum);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -88,6 +93,12 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
         if(sensorEvent.sensor == mStepCounter){
             stepCount = (int) sensorEvent.values[0];
             textViewStepCounter.setText(String.valueOf(stepCount));
+            kiloMeter =  stepCount/1312.3359;
+            kM.setText(String.format("%.2f", kiloMeter));
+            calories = stepCount * 0.03;
+            cal.setText(String.format("%.2f", calories));
+
+
         }
     }
 
