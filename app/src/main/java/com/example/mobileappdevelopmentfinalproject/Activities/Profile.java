@@ -87,6 +87,6 @@ public class Profile extends AppCompatActivity {
         ageTextView.setText(ageProfileText + " years old");
         heightTextView.setText(heightProfileText + " cm");
         weightTextView.setText(weightProfileText + " lbs");
-        distanceTextView.setText(String.valueOf(HomePage.kiloMeter + " km"));
+        distanceTextView.setText(String.valueOf(String.format("%.2f", HomePage.kiloMeter)+ " km"));
     }
 }

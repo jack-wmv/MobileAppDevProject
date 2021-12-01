@@ -83,21 +83,23 @@ public class ChangePassword extends AppCompatActivity {
 
         Login login = loginDaoObject.getCredentials(LoginPage.UserText, oldPassString);
 
-        if(login != null){
-            if(newPassString.equals(newPassStringAgain)) {
-
-                login.setPassword(newPassString);
-                database.loginDao().insert(login);
-
-                Intent intent = new Intent(ChangePassword.this, HomePage.class);
-                startActivity(intent);
-            }
-            else{
-                Toast.makeText(ChangePassword.this, "Please Retype the Same Password",Toast.LENGTH_SHORT).show();
-            }
+        if(oldPassString.isEmpty() || newPassString.isEmpty() || newPassStringAgain.isEmpty()) {
+            Toast.makeText(ChangePassword.this, "Please fill in all text fields!",Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(ChangePassword.this, "Incorrect Current Password",Toast.LENGTH_SHORT).show();
+            if (login != null) {
+                if (newPassString.equals(newPassStringAgain)) {
+                    login.setPassword(newPassString);
+                    database.loginDao().insert(login);
+
+                    Intent intent = new Intent(ChangePassword.this, HomePage.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(ChangePassword.this, "Please Retype the Same Password", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(ChangePassword.this, "Incorrect Current Password", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }

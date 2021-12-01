@@ -19,26 +19,25 @@
 
     <TextView
         android:id="@+id/nameProfile"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="36dp"
-        android:text="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
+        android:text="Name"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePicture"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
 
     <TextView
         android:id="@+id/ageProfile"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Age"
         android:fontFamily="sans-serif-black"
@@ -55,8 +54,8 @@
 
     <TextView
         android:id="@+id/heightProfile"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Height"
         android:textAlignment="center"
@@ -72,8 +71,8 @@
 
     <TextView
         android:id="@+id/weightProfile"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Weight"
         android:fontFamily="sans-serif-black"
@@ -90,8 +89,8 @@
 
     <TextView
         android:id="@+id/distanceProfile"
-        android:layout_width="100dp"
-        android:layout_height="27dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Distance"
         android:fontFamily="sans-serif-black"
@@ -105,21 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightProfile"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/profilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:contentDescription="Profile picture"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,8 @@ public class HomePage extends AppCompatActivity implements SensorEventListener {
     private TextView textViewStepCounter, kM, cal;
     private SensorManager sensorManager;
     private Sensor mStepCounter;
+    Button resetButton;
+
     static int stepCount = 0;
     static double kiloMeter = 0;
     double calories = 0;
